@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaksi — MAINPS.ID</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/transaction.css">
+</head>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<body>
+
+  <!-- ═══════════ NAVBAR ═══════════ -->
+  <nav class="mainps-navbar navbar navbar-expand-lg">
+    <div class="container-fluid px-0">
+      <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+          <img src="img/logo.png" alt="MAINPS Logo" class="logo-img">
+          <span>MAINPS.ID</span>
+      </a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto me-4 gap-1">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="rooms.html">Rooms</a></li>
+          <li class="nav-item"><a class="nav-link" href="games.html">Games</a></li>
+          <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
+        </ul>
+        <a href="reservation.html" class="btn-navbar-cta">Pesan Sekarang!</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════ TXN PAGE ═══════════ -->
+  <div class="txn-page">
+
+    <!-- Header Section -->
+    <div class="txn-header-section">
+      <div class="container-fluid px-4">
+        <div class="section-eyebrow">🛒 Transaksi</div>
+        <div class="txn-page-title">Selesaikan Pesanan</div>
+        <div class="txn-page-sub">Pilih durasi, tambahan snack, dan metode pembayaran.</div>
+
+        <!-- Progress Steps -->
+        <div class="progress-steps mt-4">
+          <!-- Step 1 -->
+          <div class="step-item">
+            <div>
+              <div class="step-circle done">✓</div>
+              <div class="step-label done">Pilih Room</div>
+            </div>
+            <div class="step-line done"></div>
+          </div>
+          <!-- Step 2 -->
+          <div class="step-item">
+            <div>
+              <div class="step-circle active">2</div>
+              <div class="step-label active">Pembayaran</div>
+            </div>
+            <div class="step-line todo"></div>
+          </div>
+          <!-- Step 3 -->
+          <div class="step-item">
+            <div>
+              <div class="step-circle todo">3</div>
+              <div class="step-label todo">Konfirmasi</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Body: 2 kolom -->
+    <div class="txn-body">
+      <div class="row g-4">
+
+        <!-- ── KIRI: Form ── -->
+        <div class="col-lg-8">
+
+          <!-- 1. Durasi -->
+          <div class="txn-section">
+            <div class="txn-section-title">⏰ Pilih Durasi Main</div>
+            <!-- Diisi JS -->
+            <div id="dur-grid" class="dur-grid"></div>
+          </div>
+
+          <!-- 2. Snack -->
+          <div class="txn-section">
+            <div class="txn-section-title">🍕 Tambahan Makanan & Snack</div>
+            <p class="text-muted-mainps mb-3" style="font-size:13px;">
+              Bisa pilih lebih dari satu. Harga ditambahkan ke total.
+            </p>
+            <!-- Diisi JS -->
+            <div id="snack-grid" class="snack-grid"></div>
+          </div>
+
+          <!-- 3. Metode Bayar -->
+          <div class="txn-section">
+            <div class="txn-section-title">💳 Metode Pembayaran</div>
+            <!-- Diisi JS -->
+            <div id="pay-opts"></div>
+          </div>
+
+        </div>
+        <!-- /col kiri -->
+
+        <!-- ── KANAN: Summary ── -->
+        <div class="col-lg-4">
+          <div class="order-summary-card">
+
+            <div class="order-summary-title">
+              📋 Ringkasan Pesanan
+            </div>
+
+            <!-- Room Preview -->
+            <div class="order-room-preview">
+              <div class="order-room-emoji" id="order-room-emoji">
+                🎮
+              </div>
+
+              <div>
+                <div class="order-room-name" id="order-room-nama">
+                  -
+                </div>
+
+                <div class="order-room-price" id="order-room-harga">
+                  -
+                </div>
+              </div>
+            </div>
+
+            <!-- Nama -->
+            <div class="order-line">
+              <span class="order-line-key">
+                Nama
+              </span>
+
+              <span class="order-line-val" id="sum-nama">
+                -
+              </span>
+            </div>
+
+            <!-- Tanggal -->
+            <div class="order-line">
+              <span class="order-line-key">
+                Tanggal
+              </span>
+
+              <span class="order-line-val" id="sum-tanggal">
+                -
+              </span>
+            </div>
+
+            <!-- Jam Mulai -->
+            <div class="order-line">
+              <span class="order-line-key">
+                Jam Mulai
+              </span>
+
+              <span class="order-line-val" id="sum-jam-mulai">
+                14:00 WIB
+              </span>
+            </div>
+
+            <!-- Durasi -->
+            <div class="order-line">
+              <span class="order-line-key">
+                Durasi
+              </span>
+
+              <span class="order-line-val" id="sum-durasi">
+                -
+              </span>
+            </div>
+
+            <!-- Jam Selesai -->
+            <div class="order-line">
+              <span class="order-line-key">
+                Jam Selesai
+              </span>
+
+              <span class="order-line-val" id="sum-jam-selesai">
+                -
+              </span>
+            </div>
+
+            <!-- Harga Room -->
+            <div class="order-line">
+              <span class="order-line-key">
+                Harga Room
+              </span>
+
+              <span class="order-line-val" id="sum-harga-room">
+                -
+              </span>
+            </div>
+
+            <!-- Snack -->
+            <div id="sum-snack-area"></div>
+
+            <!-- Total -->
+            <div class="order-total-box">
+              <div>
+                <div class="order-total-label">
+                  Total Bayar
+                </div>
+
+                <div class="order-total-sub">
+                  Termasuk semua pilihan
+                </div>
+              </div>
+
+              <div class="order-total-value" id="sum-total">
+                -
+              </div>
+            </div>
+
+            <!-- Tombol -->
+            <button class="btn-confirm" id="btn-konfirmasi" disabled>
+              Pilih metode bayar dulu!
+            </button>
+
+            <div class="text-center mt-3" style="
+        font-size:12px;
+        color:var(--muted);
+      ">
+
+              🔒 Pembayaran aman & terenkripsi
+
+            </div>
+
+          </div>
+        </div>
+        <!-- /col kanan -->
+
+      </div>
+    </div>
+    <!-- /txn-body -->
+
+  </div>
+  <!-- /txn-page -->
+
+  <!-- ═══════════ MODAL SUKSES ═══════════ -->
+  <div class="modal fade modal-success" id="modal-sukses" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content p-2">
+        <div class="modal-body py-4 px-3 text-center">
+          <div class="modal-success-icon">🎉</div>
+          <div class="modal-success-title">Booking Berhasil!</div>
+          <div class="modal-success-sub">
+            Pesanan kamu sudah masuk. Tunjukkan kode ini ke kasir saat datang.
+          </div>
+          <div class="modal-booking-code" id="modal-booking-code">MPS-XXXXXX</div>
+
+          <div class="d-flex flex-column gap-2 mb-3" style="font-size:14px;">
+
+            <div class="d-flex justify-content-between px-2">
+              <span class="text-muted-mainps">
+                Nama
+              </span>
+
+              <strong id="modal-nama">
+                -
+              </strong>
+            </div>
+
+            <div class="d-flex justify-content-between px-2">
+              <span class="text-muted-mainps">
+                Room
+              </span>
+
+              <strong id="modal-room">
+                -
+              </strong>
+            </div>
+
+            <div class="d-flex justify-content-between px-2">
+              <span class="text-muted-mainps">
+                Tanggal
+              </span>
+
+              <strong id="modal-tanggal">
+                -
+              </strong>
+            </div>
+
+            <div class="d-flex justify-content-between px-2">
+              <span class="text-muted-mainps">Total Bayar</span>
+              <strong class="text-purple" id="modal-total">-</strong>
+            </div>
+            <div class="d-flex justify-content-between px-2 mt-1">
+              <span class="text-muted-mainps">Metode Bayar</span>
+              <strong id="modal-metode">-</strong>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Transaction Logic -->
+  <script src="js/transaction.js"></script>
+  <script src="js/transition.js"></script>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer class="mainps-footer">
+    <div class="container">
+      <div class="row g-5">
+
+        <!-- Brand -->
+        <div class="col-lg-4">
+          <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
+            <img src="img/logo.png" alt="MAINPS Logo" class="logo-img">
+            <span>MAINPS.ID</span>
+          </a>
+          <p class="footer-tagline">PlayStation Lounge terbaik di Jogja.<br>Main nyaman, harga bersahabat.</p>
+          <div class="footer-info-item">
+            <span class="footer-info-icon"><i class="bi bi-geo-alt-fill"></i></span>
+            <span>Jl. Gamer No. 21, Depok, Yogyakarta</span>
+          </div>
+          <div class="footer-info-item">
+            <span class="footer-info-icon"><i class="bi bi-clock-fill"></i></span>
+            <span>Buka setiap hari — 10:00 s/d 02:00 WIB</span>
+          </div>
+          <div class="footer-info-item">
+            <span class="footer-info-icon"><i class="bi bi-whatsapp"></i></span>
+            <span>0812-3456-7890 (WhatsApp)</span>
+          </div>
+        </div>
+
+        <!-- Navigasi -->
+        <div class="col-6 col-lg-2">
+          <div class="footer-heading">Navigasi</div>
+          <ul class="footer-links">
+            <li><a href="rooms.html"><i class="bi bi-house-door-fill"></i> Rooms</a></li>
+            <li><a href="games.html"><i class="bi bi-controller"></i> Games</a></li>
+            <li><a href="reservation.html"><i class="bi bi-journal-check"></i> Reservasi<a></li>
+            <li><a href="dashboard.html"><i class="bi bi-bar-chart-fill"></i> Dashboard</a></li>
+            <li><a href="about.html"><i class="bi bi-info-circle-fill"></i> Tentang</a></li>
+          </ul>
+        </div>
+
+        <!-- Tipe Room -->
+        <div class="col-6 col-lg-3">
+          <div class="footer-heading">Tipe Room</div>
+          <ul class="footer-links">
+            <li><a href="rooms.html"><i class="bi bi-circle-fill"></i> Regular — Rp10.000/jam</a></li>
+            <li><a href="rooms.html"><i class="bi bi-star-fill"></i> VIP — Rp20.000/jam</a></li>
+            <li><a href="rooms.html"><i class="bi bi-gem"></i> VVIP — Rp35.000/jam</a></li>
+          </ul>
+        </div>
+
+        <!-- Info -->
+        <div class="col-lg-3">
+          <div class="footer-heading">Info</div>
+          <ul class="footer-links">
+            <li><a href="#">Syarat & Ketentuan</a></li>
+            <li><a href="#">Kebijakan Privasi</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <hr class="footer-divider">
+
+      <div class="footer-bottom">
+        <span>© 2026 MAINPS.ID — Hak cipta dilindungi.</span>
+        <span class="footer-badge">
+            <i class="bi bi-controller"></i>
+            Best PS Lounge 2026
+        </span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

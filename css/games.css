@@ -1,0 +1,69 @@
+body {
+    background: #F7F3FF;
+}
+
+.search-box {
+    height: 55px;
+
+    border: 2px solid #DDD6F3;
+    border-radius: 16px;
+
+    box-shadow:
+        0 2px 8px rgba(124, 58, 237, .1);
+}
+
+.search-box:focus {
+    border-color: #006FEE;
+    box-shadow:
+        0 0 0 .25rem rgba(124, 58, 237, .15);
+}
+
+.game-item {
+    cursor: pointer;
+}
+
+.game-img {
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+
+    transition: .3s;
+
+    box-shadow:
+        0 5px 20px rgba(124, 58, 237, .12);
+}
+
+.game-item:hover .game-img {
+
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 10px 30px rgba(124, 58, 237, .2);
+
+}
+
+.game-title {
+
+    margin-top: 12px;
+    margin-bottom: 4px;
+
+    color: #1E1033;
+
+    text-align: center;
+
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.game-rating {
+
+    color: #9580B8;
+
+    text-align: center;
+
+    font-size: 13px;
+    font-weight: 700;
+}
