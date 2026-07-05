@@ -567,3 +567,36 @@
     }
 
 }
+@media (max-width: 767px) {
+    .txn-header-section { padding: 20px; }
+    .txn-page-title { font-size: 22px; }
+    .txn-body { padding: 16px; }
+    .txn-section { padding: 16px; margin-bottom: 12px; }
+
+    /* durasi grid jadi 4 kolom */
+    .dur-grid { grid-template-columns: repeat(4, 1fr); gap: 8px; }
+    .dur-item { padding: 10px 4px; border-radius: 10px; }
+    .dur-jam { font-size: 18px; }
+    .dur-price-label { font-size: 9px; }
+
+    /* snack grid jadi 2 kolom */
+    .snack-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .snack-card { padding: 14px 8px; border-radius: 12px; }
+    .snack-emoji { font-size: 24px; margin-bottom: 6px; }
+    .snack-name { font-size: 12px; }
+    .snack-price { font-size: 10px; }
+
+    /* payment */
+    .pay-option { padding: 12px 14px; gap: 10px; }
+    .pay-name { font-size: 13px; }
+    .pay-sub { font-size: 11px; }
+
+    /* order summary */
+    .order-summary-card { position: static; padding: 16px; }
+    .order-total-value { font-size: 17px; }
+    .btn-confirm { padding: 12px; font-size: 13px; }
+
+    /* step progress */
+    .step-circle { width: 28px; height: 28px; font-size: 12px; }
+    .step-label { font-size: 10px; }
+}

@@ -135,14 +135,26 @@
    RESPONSIVE
 =========================== */
 
-@media(max-width:768px) {
+@media (max-width: 991px) {
+    .room-title { font-size: 32px; }
+    .room-img { height: 200px; }
+}
 
-    .room-title {
-        font-size: 30px;
-    }
+@media (max-width: 767px) {
+    .room-title { font-size: 24px; }
+    .room-subtitle { font-size: 10px; }
+    .room-img { height: 180px; }
+    .room-body { padding: 14px; }
+    .room-name { font-size: 16px; }
+    .price { font-size: 18px; }
+    .facility { font-size: 12px; }
+    .room-filter .btn,
+    .room-filter button { padding: 6px 14px; font-size: 12px; }
+    .btn-main, .btn-outline-main { padding: 9px 20px; font-size: 13px; }
+}
 
-    .room-img {
-        height: 200px;
-    }
-
+@media (max-width: 480px) {
+    .room-title { font-size: 20px; }
+    .room-img { height: 160px; }
+    .price { font-size: 16px; }
 }

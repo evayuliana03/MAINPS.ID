@@ -114,3 +114,8 @@
     }
 
 }
+@media (max-width: 767px) {
+    .game-title { font-size: 13px; }
+    .game-img { border-radius: 12px; }
+    .search-box { height: 46px; }
+}

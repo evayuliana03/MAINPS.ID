@@ -164,3 +164,21 @@
     }
 
 }
+@media (max-width: 767px) {
+    .reservation-title { font-size: 24px; }
+    .reservation-card { padding: 20px; }
+    .total-box {
+        font-size: 16px;
+        flex-direction: column;
+        text-align: center;
+    }
+}
+@media (max-width: 767px) {
+    .reservation-title { font-size: 24px; }
+    .reservation-subtitle { font-size: 10px; }
+    .reservation-card { padding: 16px; border-radius: 16px; }
+    .form-control, .form-select { height: 44px; font-size: 13px; border-radius: 12px; }
+    .form-label { font-size: 13px; }
+    .total-box { font-size: 14px; padding: 12px; }
+    .btn-book { padding: 12px; font-size: 13px; }
+}
