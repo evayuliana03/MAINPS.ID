@@ -1,69 +1,116 @@
-body {
-    background: #ffff;
-}
+/* ===========================
+   GAME SEARCH
+=========================== */
 
 .search-box {
     height: 55px;
-
-    border: 2px solid #DDD6F3;
+    border: 2px solid #DCE3EF;
     border-radius: 16px;
-
-    box-shadow:
-        0 2px 8px rgba(124, 58, 237, .1);
+    box-shadow: 0 2px 8px rgba(0, 111, 238, .08);
+    transition: .2s;
 }
 
 .search-box:focus {
     border-color: #006FEE;
-    box-shadow:
-        0 0 0 .25rem rgba(124, 58, 237, .15);
+    box-shadow: 0 0 0 .25rem rgba(0, 111, 238, .15);
 }
+
+
+/* ===========================
+   GAME LIST
+=========================== */
 
 .game-item {
     cursor: pointer;
+    transition: .25s;
 }
 
 .game-img {
     width: 100%;
     aspect-ratio: 1/1;
-
     object-fit: cover;
-
     border-radius: 20px;
-
+    box-shadow: 0 5px 20px rgba(0, 111, 238, .12);
     transition: .3s;
-
-    box-shadow:
-        0 5px 20px rgba(124, 58, 237, .12);
 }
 
 .game-item:hover .game-img {
-
     transform: translateY(-6px);
-
-    box-shadow:
-        0 10px 30px rgba(124, 58, 237, .2);
-
+    box-shadow: 0 10px 30px rgba(0, 111, 238, .2);
 }
 
-.game-title {
 
+/* ===========================
+   GAME INFO
+=========================== */
+
+.game-title {
     margin-top: 12px;
     margin-bottom: 4px;
-
-    color: #1E1033;
-
+    color: #101828;
     text-align: center;
-
     font-size: 15px;
     font-weight: 800;
-} 
+}
 
 .game-rating {
-
-    color: #8082b8;
-
+    color: #9AA0B4;
     text-align: center;
-
     font-size: 13px;
     font-weight: 700;
+}
+
+
+/* ===========================
+   RATING ICON
+=========================== */
+
+.game-rating i {
+    color: #FBBF24;
+}
+
+
+/* ===========================
+   EMPTY RESULT
+=========================== */
+
+.game-empty {
+    padding: 50px;
+    text-align: center;
+}
+
+.game-empty h3 {
+    color: #101828;
+    font-size: 22px;
+    font-weight: 900;
+}
+
+.game-empty p {
+    color: #9AA0B4;
+    font-size: 14px;
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px) {
+
+    .search-box {
+        height: 50px;
+    }
+
+    .game-img {
+        border-radius: 15px;
+    }
+
+    .game-title {
+        font-size: 14px;
+    }
+
+    .game-rating {
+        font-size: 12px;
+    }
+
 }

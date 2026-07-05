@@ -1,3 +1,10 @@
+// =============================================
+// DATA URUTAN HALAMAN
+// =============================================
+
+// menyimpan daftar halaman beserta urutannya
+// digunakan untuk menentukan arah animasi pindah halaman
+
 const pages = {
     "index.html": 0,
     "rooms.html": 1,
@@ -7,6 +14,10 @@ const pages = {
     "reservation.html": 5,
     "transaction.html": 6
 };
+
+// =============================================
+// CEK HALAMAN SAAT INI
+// =============================================
 
 const currentPage =
     window.location.pathname.split("/").pop() || "index.html";
@@ -22,6 +33,10 @@ window.addEventListener("DOMContentLoaded", () => {
     } else if (direction === "left") {
         document.body.classList.add("page-enter-left");
     }
+
+    // =============================================
+    // EVENT SEMUA LINK
+    // =============================================
 
     document.querySelectorAll("a").forEach(link => {
         link.addEventListener("click", function (e) {

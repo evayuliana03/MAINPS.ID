@@ -1,3 +1,7 @@
+// ===========================
+// Data Games
+// ===========================
+
 const games = [
 
   {
@@ -361,11 +365,18 @@ const games = [
   }
 
 ];
+// ===========================
+// Ambil Element Container Game
+// ===========================
 
 const container =
   document.getElementById(
     "gameContainer"
   );
+
+// ===========================
+// Render / Menampilkan Game
+// ===========================
 
 function tampilGame(data) {
 
@@ -399,6 +410,10 @@ function tampilGame(data) {
   });
 
 }
+
+// =================================
+// Tampilan pertama dan Search Game
+// =================================
 
 tampilGame(games);
 

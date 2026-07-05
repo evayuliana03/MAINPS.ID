@@ -1,11 +1,21 @@
+// =============================================
+// DATA JAM OPERASIONAL
+// =============================================
 
-
-const jamOps = [10,11,12,13,14,15,16,17,18,19,20,21,22,23,0,1];
+const jamOps = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 0, 1];
 const container = document.getElementById("roomContainer");
+
+// =============================================
+// CEK WAKTU SEKARANG
+// =============================================
 
 function jamSekarang() {
     return new Date().getHours();
 }
+
+// =============================================
+// CEK JAM YANG SUDAH LEWAT
+// =============================================
 
 function jamSudahLewat(jam) {
     const now = jamSekarang();
@@ -18,7 +28,7 @@ function jamSudahLewat(jam) {
 }
 
 // =============================================
-// RESERVASI
+// AMBIL DATA RESERVASI
 // =============================================
 function ambilReservasiHariIni() {
     const hariIni = new Date().toISOString().split("T")[0];
@@ -136,11 +146,12 @@ function btnHTML(room, status) {
         Lihat Detail Room
         </a>
     `;
-}   
+}
 
 // =============================================
 // RENDER ROOM
 // =============================================
+
 function tampilRoom(filter = "all") {
     const reservasiHariIni = ambilReservasiHariIni();
     container.innerHTML = "";
@@ -197,6 +208,7 @@ tampilRoom();
 // =============================================
 // FILTER + TRANSISI
 // =============================================
+
 document.querySelectorAll(".filter-btn").forEach(btn => {
     btn.addEventListener("click", function () {
 

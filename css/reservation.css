@@ -1,85 +1,83 @@
-body {
-    background: #fff;
-    font-family: 'Nunito', sans-serif;
-}
+/* ===========================
+   RESERVATION HEADER
+=========================== */
 
 .reservation-title {
-
-    color: #1E1033;
-
+    color: #101828;
     font-size: 38px;
     font-weight: 900;
 }
 
 .reservation-subtitle {
-
-    color: #9580B8;
-
-    font: 700 12px 'Space Mono',
-        monospace;
+    color: #9AA0B4;
+    font: 700 12px 'Space Mono', monospace;
 }
+
+
+/* ===========================
+   RESERVATION CARD
+=========================== */
 
 .reservation-card {
-
     background: #fff;
-
-    border: 2px solid #DDD6F3;
-
+    border: 2px solid #DCE3EF;
     border-radius: 24px;
-
     padding: 40px;
-
-    box-shadow:
-        0 2px 8px rgba(124, 58, 237, .1);
-
+    box-shadow: 0 2px 8px rgba(0, 111, 238, .08);
 }
 
-.form-label {
 
-    color: #1E1033;
+/* ===========================
+   FORM EXTRA
+=========================== */
 
-    font-weight: 800;
+.reservation-card textarea.form-control {
+    height: auto;
+    min-height: 120px;
+    resize: none;
 }
 
-.form-control,
-.form-select {
 
-    height: 55px;
-
-    border: 2px solid #DDD6F3;
-
-    border-radius: 16px;
-}
-
-.form-control:focus,
-.form-select:focus {
-
-    border-color: #006FEE;
-
-    box-shadow:
-        0 0 0 .25rem rgba(124, 58, 237, .15);
-}
+/* ===========================
+   SNACK OPTION
+=========================== */
 
 .snack-box {
-
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
 .snack-box label {
-
     padding: 14px;
-
-    border: 2px solid #DDD6F3;
-
+    border: 2px solid #DCE3EF;
     border-radius: 14px;
-
     cursor: pointer;
+    transition: .2s;
 }
 
-.total-box {
+.snack-box label:hover {
+    border-color: #006FEE;
+    background: #EAF2FF;
+}
 
+.snack-box input {
+    accent-color: #006FEE;
+}
+
+.snack-box label:has(input:checked) {
+    border-color: #006FEE;
+    background: #EAF2FF;
+    color: #006FEE;
+    font-weight: 800;
+}
+
+
+/* ===========================
+   TOTAL PAYMENT
+=========================== */
+
+.total-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -89,50 +87,80 @@ body {
 
     padding: 20px;
 
-    background: #F7F3FF;
+    background: #F7FAFF;
 
     border-radius: 18px;
+
+    color: #101828;
 
     font-size: 20px;
     font-weight: 900;
 
-    color: #1E1033;
+    transition: .2s;
+}
+
+.total-box:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 111, 238, .12);
 }
 
 #total {
     color: #006FEE;
 }
 
-.btn-book {
 
+/* ===========================
+   BUTTON CUSTOM
+=========================== */
+
+.reservation-card .btn-book {
     width: 100%;
-
-    border: none;
-    border-radius: 16px;
-
     padding: 16px;
-
-    background: #006FEE;
-
-    color: #fff;
-
-    font-size: 15px;
-    font-weight: 800;
-
-    transition: .2s;
+    border-radius: 16px;
 }
 
-.btn-book:hover {
 
-    background: #A78BFA;
+/* ===========================
+   SUCCESS STATE
+=========================== */
+
+.reservation-success {
+    padding: 30px;
+    text-align: center;
 }
 
-.is-invalid {
-    border: 2px solid #EF4444 !important;
+.reservation-success i {
+    color: #10B981;
+    font-size: 45px;
 }
 
-.invalid-feedback {
-    display: block;
-    color: #EF4444;
-    font-size: 13px;
+.reservation-success h3 {
+    color: #101828;
+    font-weight: 900;
+}
+
+.reservation-success p {
+    color: #9AA0B4;
+}
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:768px) {
+
+    .reservation-title {
+        font-size: 30px;
+    }
+
+    .reservation-card {
+        padding: 25px;
+    }
+
+    .total-box {
+        font-size: 17px;
+        padding: 16px;
+    }
+
 }
